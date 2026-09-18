@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ooops I did something 🎀🎀🫣</title>
+    <style>
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --accent-pink: #f43f5e;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --bear-brown: #b45309;
+        --bear-dark: #78350f;
+        --bear-muzzle: #fef3c7;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--bg-color);
+        font-family: "Courier New", Courier, monospace;
+        color: var(--text-main);
+        overflow-x: hidden;
+      }
+
+      .container {
+        text-align: center;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(244, 63, 94, 0.2);
+        max-width: 400px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Teddy Bear CSS */
+      .bear-wrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+        animation: float 4s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .bear-head {
+        position: absolute;
+        width: 100px;
+        height: 90px;
+        background: var(--bear-brown);
+        border-radius: 50% 50% 45% 45%;
+        top: 25px;
+        left: 25px;
+        z-index: 2;
+      }
+
+      .ear {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background: var(--bear-brown);
+        border-radius: 50%;
+        top: 15px;
+      }
+      .ear.left {
+        left: 18px;
+      }
+      .ear.right {
+        right: 18px;
+      }
+
+      .ear::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: #f43f5e;
+        border-radius: 50%;
+        top: 7px;
+        left: 7px;
+        opacity: 0.6;
+      }
+
+      .eye {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #000;
+        border-radius: 50%;
+        top: 40px;
+        animation: blink 4s infinite;
+      }
+      .eye.left {
+        left: 28px;
+      }
+      .eye.right {
+        right: 28px;
+      }
+
+      @keyframes blink {
+        0%,
+        90%,
+        100% {
+          transform: scaleY(1);
+        }
+        95% {
+          transform: scaleY(0);
+        }
+      }
+
+      .muzzle {
+        position: absolute;
+        width: 34px;
+        height: 26px;
+        background: var(--bear-muzzle);
+        border-radius: 50%;
+        bottom: 12px;
+        left: 33px;
+      }
+
+      .nose {
+        position: absolute;
+        width: 12px;
+        height: 8px;
+        background: #000;
+        border-radius: 50% 50% 40% 40%;
+        top: 4px;
+        left: 11px;
+      }
+
+      .mouth {
+        position: absolute;
+        width: 14px;
+        height: 8px;
+        border: 2px solid #000;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 32px;
+        color: var(--accent-pink);
+        bottom: 15px;
+        left: 59px;
+        z-index: 3;
+        animation: pulse 1.5s infinite ease-in-out;
+        cursor: pointer;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+          filter: drop-shadow(0 0 10px var(--accent-pink));
+        }
+      }
+      /* ---------------------- */
+
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+      }
+
+      .status {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        background-color: transparent;
+        color: var(--accent-pink);
+        border: 2px solid var(--accent-pink);
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-family: inherit;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-pink);
+        color: var(--text-main);
+        box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+      }
+
+      .hidden-message {
+        margin-top: 25px;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        min-height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Cute Teddy Bear Element -->
+      <div class="bear-wrapper">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="bear-head">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="muzzle">
+            <div class="nose"></div>
+            <div class="mouth"></div>
+          </div>
+        </div>
+        <div class="heart" onclick="boostHeart()">❤️</div>
+      </div>
+
+      <h1>System.out.println("I miss you");</h1>
+      <p class="status">Status: connection_delay_detected</p>
+
+      <button class="btn" id="actionBtn" onclick="revealMessage()">
+        Check Connection
+      </button>
+
+      <div class="hidden-message" id="messageTarget"></div>
+    </div>
+
+    <script>
+      const secretText =
+        "Error 404: Your smile not found. 💔\n\nI miss seeing you smile, talking to you, laughing as you watch your tiktoks, being around you, your awesome takes , I'm patiently waiting for us to hangout again🫰. I know you're taking your space just reminding you i'm here 🫶💋";
+      let index = 0;
+      let isTyping = false;
+
+      function boostHeart() {
+        const heart = document.querySelector(".heart");
+        heart.style.transform = "scale(1.5)";
+        setTimeout(() => (heart.style.transform = ""), 200);
+      }
+
+      function revealMessage() {
+        if (isTyping) return;
+        isTyping = true;
+
+        const btn = document.getElementById("actionBtn");
+        const target = document.getElementById("messageTarget");
+
+        btn.style.display = "none";
+        target.innerHTML = "";
+
+        function typeWriter() {
+          if (index < secretText.length) {
+            if (secretText.charAt(index) === "\n") {
+              target.innerHTML += "<br>";
+            } else {
+              target.innerHTML += secretText.charAt(index);
+            }
+            index++;
+            setTimeout(typeWriter, 40);
+          }
+        }
+        typeWriter();
+      }
+    </script>
+  </body>
+</html>
